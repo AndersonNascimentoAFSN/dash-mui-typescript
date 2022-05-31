@@ -43,7 +43,7 @@ export const AppThemeProvider = ({ children }: AppProviderProps) => {
       <ThemeProvider theme={theme}>
         <Box
           width="100vw"
-          height="100v"
+          height="100vh"
           bgcolor={theme.palette.background.default}
         >
           {children}

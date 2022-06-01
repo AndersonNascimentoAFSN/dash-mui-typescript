@@ -1,5 +1,5 @@
-import { Typography, Button } from "@mui/material";
-import { useAppThemeContext } from "../../shared/contexts";
+import { Typography, Button } from '@mui/material';
+import { useAppThemeContext } from '../../shared/contexts';
 
 export function Home() {
   const { toggleTheme } = useAppThemeContext();

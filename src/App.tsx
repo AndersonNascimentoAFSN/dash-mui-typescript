@@ -1,11 +1,12 @@
-import { CssBaseline } from '@mui/material';
 import { AppRoutes } from './routes';
+import { SideBar } from './shared/components';
 
 export function App() {
   return (
-    <div>
-      <CssBaseline />
-      <AppRoutes />
-    </div>
+    <>
+      <SideBar>
+        <AppRoutes />
+      </SideBar>
+    </>
   );
 }

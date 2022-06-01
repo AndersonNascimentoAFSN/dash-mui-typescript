@@ -4,11 +4,11 @@ import { useAppThemeContext } from '../../shared/contexts';
 export function Home() {
   const { toggleTheme } = useAppThemeContext();
   return (
-    <div>
+    <>
       <Typography>Hello World Home!</Typography>
       <Button variant="contained" color="primary" onClick={toggleTheme}>
         Clique Aqui
       </Button>
-    </div>
+    </>
   );
 }

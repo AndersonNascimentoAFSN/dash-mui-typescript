@@ -1,4 +1,16 @@
-import { Drawer, useTheme, Box, Avatar, Divider } from '@mui/material';
+import {
+  Drawer,
+  useTheme,
+  Box,
+  Avatar,
+  Divider,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  // Icon
+} from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
 import guilherme from '../../../assets/guilherme-dornelles.png';
 
 interface SideBarProps {
@@ -35,7 +47,15 @@ export function SideBar({children}: SideBarProps) {
           <Divider />
 
           <Box flex={1}>
-              
+            <List component="nav">
+              <ListItemButton>
+                <ListItemIcon>
+                  {/* <Icon>home</Icon> */}
+                  <HomeIcon />
+                </ListItemIcon>
+                <ListItemText primary="Página Inicial" />
+              </ListItemButton>
+            </List>
           </Box>
         </Box>
       </Drawer>

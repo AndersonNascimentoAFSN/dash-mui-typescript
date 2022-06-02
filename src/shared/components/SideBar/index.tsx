@@ -7,7 +7,6 @@ import {
   List,
   useMediaQuery,
 } from '@mui/material';
-// import HomeIcon from '@mui/icons-material/Home';
 import guilherme from '../../../assets/guilherme-dornelles.png';
 import { useDrawerContext } from '../../contexts';
 import { ListItemLink } from './ListItemLink';

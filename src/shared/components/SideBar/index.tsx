@@ -5,15 +5,12 @@ import {
   Avatar,
   Divider,
   List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   useMediaQuery,
-  // Icon
 } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
+// import HomeIcon from '@mui/icons-material/Home';
 import guilherme from '../../../assets/guilherme-dornelles.png';
 import { useDrawerContext } from '../../contexts';
+import { ListItemLink } from './ListItemLink';
 
 interface SideBarProps {
   children?: React.ReactNode;
@@ -22,7 +19,11 @@ interface SideBarProps {
 export function SideBar({children}: SideBarProps) {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
-  const { isDrawerOpen, toggleDrawerOpen } = useDrawerContext();
+  const { 
+    isDrawerOpen,
+    toggleDrawerOpen,
+    drawerOptions
+  } = useDrawerContext();
 
   return (
     <>
@@ -56,13 +57,23 @@ export function SideBar({children}: SideBarProps) {
 
           <Box flex={1}>
             <List component="nav">
-              <ListItemButton>
-                <ListItemIcon>
-                  {/* <Icon>home</Icon> */}
-                  <HomeIcon />
-                </ListItemIcon>
-                <ListItemText primary="Página Inicial" />
-              </ListItemButton>
+              {
+                drawerOptions.map((drawerOption) => (
+                  <ListItemLink 
+                    key={drawerOption.path}
+                    to={drawerOption.path}
+                    icon={drawerOption.icon}
+                    label={drawerOption.label}
+                    handleClick={smDown ? toggleDrawerOpen : undefined}
+                  />
+                ))
+              }
+              {/* <ListItemLink 
+                to='/'
+                icon={<HomeIcon />}
+                label="Página Inicial"
+                handleClick={smDown ? toggleDrawerOpen : undefined}
+              /> */}
             </List>
           </Box>
         </Box>
